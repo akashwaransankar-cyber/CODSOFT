@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Premgopi Portfolio</title>
+
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+/* ===========================
+   PERSONAL PORTFOLIO WEBSITE
+   Developed By: Premgopi
+
+   Features:
+   - Responsive Design
+   - Typing Animation
+   - Dark/Light Mode
+   - Skills Progress Bars
+   - Project Showcase
+   - Resume Download Button
+   - Contact Form
+   - Back To Top Button
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f5f5f5;
+    color:#333;
+    transition:0.4s;
+}
+
+.dark{
+    background:#121212;
+    color:white;
+}
+
+/* Navigation Bar */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+nav{
+    background:#0077ff;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 10%;
+}
+
+.logo{
+    font-size:28px;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:20px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+#theme-btn{
+    padding:8px 12px;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+/* Home Section */
+
+.hero{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background:linear-gradient(135deg,#0077ff,#00d4ff);
+    color:white;
+}
+
+.hero h1{
+    font-size:55px;
+}
+
+.hero h2{
+    margin-top:10px;
+    height:40px;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 25px;
+    background:white;
+    color:#0077ff;
+    text-decoration:none;
+    border-radius:5px;
+    font-weight:bold;
+}
+
+/* Common Section Styling */
+
+section{
+    padding:80px 10%;
+}
+
+section h2{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+/* About Section */
+
+.about{
+    text-align:center;
+}
+
+.profile{
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    margin-bottom:20px;
+}
+
+/* Skills Section */
+
+.skill{
+    margin-bottom:20px;
+}
+
+.bar{
+    width:100%;
+    height:18px;
+    background:#ddd;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.bar div{
+    height:100%;
+    background:#0077ff;
+}
+
+/* Projects Section */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.dark .card{
+    background:#1f1f1f;
+}
+
+/* Resume Section */
+
+.resume{
+    text-align:center;
+}
+
+/* Contact Form */
+
+form{
+    max-width:500px;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+input,
+textarea{
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+button{
+    padding:12px;
+    background:#0077ff;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+/* Footer */
+
+footer{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+.social i{
+    font-size:25px;
+    margin:10px;
+}
+
+/* Back To Top Button */
+
+#topBtn{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    padding:10px 15px;
+    background:#0077ff;
+    color:white;
+    border:none;
+    border-radius:50%;
+    display:none;
+    cursor:pointer;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Navigation Bar -->
+
+<header>
+<nav>
+
+<h2 class="logo">Portfolio</h2>
+
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+<button id="theme-btn">🌙</button>
+
+</nav>
+</header>
+
+<!-- Home Section -->
+
+<section class="hero" id="home">
+
+<div>
+<h1>Hello, I'm Premgopi</h1>
+
+<h2 id="typing"></h2>
+
+<a href="#contact" class="btn">Hire Me</a>
+</div>
+
+</section>
+
+<!-- About Me Section -->
+
+<section id="about">
+
+<h2>About Me</h2>
+
+<div class="about">
+
+<img src="https://via.placeholder.com/180" class="profile">
+
+<p>
+I am Premgopi, a passionate Computer Science student
+with interests in Web Development, Machine Learning,
+and Software Development. I enjoy creating responsive
+websites and learning modern technologies to improve
+my programming skills.
+</p>
+
+</div>
+
+</section>
+
+<!-- Skills Section -->
+
+<section id="skills">
+
+<h2>Skills</h2>
+
+<div class="skill">
+<p>HTML</p>
+<div class="bar">
+<div style="width:95%"></div>
+</div>
+</div>
+
+<div class="skill">
+<p>CSS</p>
+<div class="bar">
+<div style="width:90%"></div>
+</div>
+</div>
+
+<div class="skill">
+<p>JavaScript</p>
+<div class="bar">
+<div style="width:85%"></div>
+</div>
+</div>
+
+<div class="skill">
+<p>Python</p>
+<div class="bar">
+<div style="width:88%"></div>
+</div>
+</div>
+
+</section>
+
+<!-- Projects Section -->
+
+<section id="projects">
+
+<h2>Projects</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Titanic Survival Prediction</h3>
+<p>Machine Learning model for predicting passenger survival.</p>
+</div>
+
+<div class="card">
+<h3>Movie Rating Prediction</h3>
+<p>Predicting movie ratings using machine learning techniques.</p>
+</div>
+
+<div class="card">
+<h3>Iris Flower Classification</h3>
+<p>Classification project using Scikit-Learn algorithms.</p>
+</div>
+
+<div class="card">
+<h3>Sales Prediction</h3>
+<p>Data analysis and sales forecasting project.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- Resume Section -->
+
+<section class="resume">
+
+<h2>Resume</h2>
+
+<a href="resume.pdf" download class="btn">
+Download Resume
+</a>
+
+</section>
+
+<!-- Contact Section -->
+
+<section id="contact">
+
+<h2>Contact Me</h2>
+
+<form>
+
+<input type="text" placeholder="Enter Your Name" required>
+
+<input type="email" placeholder="Enter Your Email" required>
+
+<textarea rows="5" placeholder="Enter Your Message"></textarea>
+
+<button type="submit">Send Message</button>
+
+</form>
+
+</section>
+
+<!-- Footer -->
+
+<footer>
+
+<p>© 2026 Premgopi. All Rights Reserved.</p>
+
+<div class="social">
+<i class="fab fa-github"></i>
+<i class="fab fa-linkedin"></i>
+<i class="fab fa-instagram"></i>
+</div>
+
+</footer>
+
+<!-- Back To Top Button -->
+
+<button id="topBtn">↑</button>
+
+<script>
+
+/* ==========================
+   Typing Animation
+========================== */
+
+const words = [
+    "Web Developer",
+    "Frontend Developer",
+    "Machine Learning Enthusiast",
+    "Python Programmer"
+];
+
+let i = 0;
+let j = 0;
+let currentWord = "";
+let isDeleting = false;
+
+function typeEffect(){
+
+    currentWord = words[i];
+
+    if(!isDeleting){
+
+        document.getElementById("typing").innerHTML =
+        currentWord.substring(0,j+1);
+
+        j++;
+
+        if(j === currentWord.length){
+            isDeleting = true;
+            setTimeout(typeEffect,1000);
+            return;
+        }
+
+    }else{
+
+        document.getElementById("typing").innerHTML =
+        currentWord.substring(0,j-1);
+
+        j--;
+
+        if(j === 0){
+            isDeleting = false;
+            i++;
+
+            if(i === words.length){
+                i = 0;
+            }
+        }
+    }
+
+    setTimeout(typeEffect,150);
+}
+
+typeEffect();
+
+/* Dark Mode Toggle */
+
+document.getElementById("theme-btn")
+.addEventListener("click",function(){
+
+    document.body.classList.toggle("dark");
+
+});
+
+/* Back To Top Button */
+
+let topBtn = document.getElementById("topBtn");
+
+window.onscroll = function(){
+
+    if(document.documentElement.scrollTop > 300){
+        topBtn.style.display = "block";
+    }else{
+        topBtn.style.display = "none";
+    }
+};
+
+topBtn.onclick = function(){
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+};
+
+</script>
+
+</body>
+</html>
